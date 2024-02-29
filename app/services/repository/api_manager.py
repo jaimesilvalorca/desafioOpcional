@@ -14,7 +14,12 @@ def delete(url, headers = {}, payload = {}):
     res = (requests.delete(url=url, headers = headers, data=dumps(payload)).text)
     if(res == ''):
         print("La respuesta de la Api fue vacia")
-        response = None
+        response = {
+            "success":False,
+            "status":204,
+            "message":"Sin datos para enviar",            
+            "data":None
+        }
     else:
         response = res
     

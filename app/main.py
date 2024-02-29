@@ -16,18 +16,19 @@ def app():
                 "residence": "zion"
              }
     
-    #POST
+
     created_user = crear_usuario(post=post_user)
     print(created_user)
     
-    #PUT
+
     update_user = actualizar_usuario(put=put_user, id=2)
     print(update_user)
     
-    #DELETE 
+
     e_user = eliminar_usuario(id='6')
-    if(e_user == None):
-        print("Problema con la repsuesta de la api")
+    if(e_user['data'] == None):
+        print(f"Respuesta de la api: {e_user['message']}")
+    print(e_user)
     
     
     
